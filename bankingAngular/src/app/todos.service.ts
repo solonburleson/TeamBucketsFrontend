@@ -13,7 +13,43 @@ export class TodoService {
     this.uri = 'http://localhost:8080/api/todos';
   }
 
+  addProduct(todoDescr, dueDate, status, priority, userId) {
+    const obj = {
+      todoDescr,
+      dueDate,
+      status,
+      priority
+    };
+    console.log('check object before posting ');
+    console.log(obj);
+    this.http.post(`${this.uri}/${userId}`)
+        .subscribe(res => console.log('Done'));
+  }
+
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.uri}`);
+  }
+
+  editTodo(id) {
+    return this.http.get<Todo>(`${this.uri}/${userId}`);
+  }
+
+  updateTodo(todoDescr, dueDate, status, priority, id) {
+    const obj = {
+      id,
+      todoDescr,
+      dueDate,
+      status,
+      priority
+    };
+
+    console.log(`${this.uri}/${Number(id)}`);
+
+    this.http.put(`${this.uri}/${Number(id)}`, obj)
+      .subscribe(res => console.log('Done'));
+  }
+
+  deleteTodo(id) {
+    return this.http.delete(`${this.uri}/${Number(id)}`);
   }
 }
