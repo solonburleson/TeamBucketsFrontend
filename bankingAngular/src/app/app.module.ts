@@ -12,6 +12,7 @@ import { TodosEditComponent } from './todos-edit/todos-edit.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path: 'todo/create', component: TodosAddComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

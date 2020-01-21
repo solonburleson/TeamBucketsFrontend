@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TodoService } from '../todo-service.service';
-import Todo from '../Todo';
+import { TodoService } from '../todos.service';
+import Todo from '../todo';
 
 @Component({
   selector: 'app-todos-test',
