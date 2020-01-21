@@ -31,7 +31,7 @@ export class TodoService {
   }
 
   editTodo(id) {
-    return this.http.get<Todo>(`${this.uri}/${userId}`);
+    return this.http.get<Todo>(`${this.uri}/${id}`);
   }
 
   updateTodo(todoDescr, dueDate, status, priority, id) {
