@@ -22,7 +22,7 @@ export class TodoService {
     };
     console.log('check object before posting ');
     console.log(obj);
-    this.http.post(`${this.uri}/${userId}`)
+    this.http.post(`${this.uri}/${userId}`, obj)
         .subscribe(res => console.log('Done'));
   }
 
