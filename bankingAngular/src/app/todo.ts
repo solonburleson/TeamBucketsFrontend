@@ -1,7 +1,7 @@
 export default class Todo {
     id: number;
-    todo: string;
-    dueDate: any;
+    description: string;
+    dueDate: date;
     status: boolean;
     priority: number;
 }

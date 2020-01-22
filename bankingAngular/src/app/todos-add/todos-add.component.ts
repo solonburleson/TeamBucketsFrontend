@@ -27,9 +27,9 @@ export class TodosAddComponent implements OnInit {
     });
   }
 
-  onSubmit(id, todoDescr, dueDate, status, priority) {
+  onSubmit(id, description, dueDate, status, priority) {
     console.log(this.angularForm);
-    this.todoService.addTodo(id, todoDescr, status, priority);
+    this.todoService.addTodo(id, description, dueDate, status, priority);
   }
 
 }
