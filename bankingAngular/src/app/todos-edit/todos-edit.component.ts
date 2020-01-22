@@ -13,9 +13,9 @@ export class TodosEditComponent implements OnInit {
   todo: Todo;
   angForm: FormGroup;
 
-  constructor(private todoService: TodoService, 
-              private router: Router, 
-              private fb: FormBuilder, 
+  constructor(private todoService: TodoService,
+              private router: Router,
+              private fb: FormBuilder,
               private route: ActivatedRoute) {
       this.createForm();
   }

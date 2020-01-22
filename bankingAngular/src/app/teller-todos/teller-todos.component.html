@@ -1,5 +1,5 @@
 <h2>{{name}}</h2>
-<a role="button" class="btn btn-success" routerLink="/todo/create/"> Add Task </a> 
+<a role="button" class="btn btn-success" routerLink="/todo/create/"> Add Task </a>
 <table class="table table-bordered col-lg-6 mx-auto">
   <thead>
     <th>Todo</th>
@@ -22,7 +22,7 @@
             <td>&#10060;</td>
           </ng-container>
           <td>
-            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a>
             <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a>
           </td>
         </tr>
@@ -39,7 +39,7 @@
             <td>&#10060;</td>
           </ng-container>
           <td>
-            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a>
             <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
           </td>
         </tr>
@@ -56,7 +56,7 @@
             <td>&#10060;</td>
           </ng-container>
           <td>
-            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a>
             <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
           </td>
         </tr>
