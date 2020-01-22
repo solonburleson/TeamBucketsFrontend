@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegistrationFormComponent } from './registration-form.component';
+import { BranchManagerTodosComponent } from './branch-manager-todos.component';
 
-describe('RegistrationFormComponent', () => {
-  let component: RegistrationFormComponent;
-  let fixture: ComponentFixture<RegistrationFormComponent>;
+describe('BranchManagerTodosComponent', () => {
+  let component: BranchManagerTodosComponent;
+  let fixture: ComponentFixture<BranchManagerTodosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegistrationFormComponent ]
+      declarations: [ BranchManagerTodosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegistrationFormComponent);
+    fixture = TestBed.createComponent(BranchManagerTodosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

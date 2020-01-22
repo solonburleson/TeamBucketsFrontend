@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenericsComponent } from './generics.component';
+import { TellerTodosComponent } from './teller-todos.component';
 
-describe('GenericsComponent', () => {
-  let component: GenericsComponent;
-  let fixture: ComponentFixture<GenericsComponent>;
+describe('TellerTodosComponent', () => {
+  let component: TellerTodosComponent;
+  let fixture: ComponentFixture<TellerTodosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenericsComponent ]
+      declarations: [ TellerTodosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenericsComponent);
+    fixture = TestBed.createComponent(TellerTodosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoFormComponent } from './todo-form.component';
+import { AccountantTodosComponent } from './accountant-todos.component';
 
-describe('TodoFormComponent', () => {
-  let component: TodoFormComponent;
-  let fixture: ComponentFixture<TodoFormComponent>;
+describe('AccountantTodosComponent', () => {
+  let component: AccountantTodosComponent;
+  let fixture: ComponentFixture<AccountantTodosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoFormComponent ]
+      declarations: [ AccountantTodosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoFormComponent);
+    fixture = TestBed.createComponent(AccountantTodosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
