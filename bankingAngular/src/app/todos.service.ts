@@ -13,11 +13,10 @@ export class TodoService {
     this.uri = 'http://localhost:8080/api/todos';
   }
 
-  addTodo(todoDescr, dueDate, status, priority, id) {
+  addTodo(todoDescr, status, priority, id) {
     const obj = {
       id,
       todoDescr,
-      dueDate,
       status,
       priority
     };
