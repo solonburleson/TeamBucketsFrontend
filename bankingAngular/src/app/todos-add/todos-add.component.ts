@@ -34,6 +34,7 @@ export class TodosAddComponent implements OnInit {
     console.log(this.angForm);
     this.route.params.subscribe(params => {
       this.todoService.addTodo(params.id, description, dueDate, status, priority);
+      this.router.navigate(['/']);
     });
   }
 

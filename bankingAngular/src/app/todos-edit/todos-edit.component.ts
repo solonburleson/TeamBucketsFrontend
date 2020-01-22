@@ -42,6 +42,7 @@ export class TodosEditComponent implements OnInit {
   updateTodo(description, dueDate, status, priority) {
     this.route.params.subscribe(params => {
       this.todoService.updateTodo(this.todo.id, description, dueDate, status, priority);
+      this.router.navigate(['/']);
     });
   }
 
