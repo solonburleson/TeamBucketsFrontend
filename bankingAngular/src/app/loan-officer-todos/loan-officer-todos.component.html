@@ -1,1 +1,66 @@
-<p>loan-officer-todos works!</p>
+<h2>{{name}}</h2>
+<a role="button" class="btn btn-success" href="/todo/create"> Add Task </a> 
+<table class="table table-bordered col-lg-6 mx-auto">
+  <thead>
+    <th>Todo</th>
+    <th>Priority</th>
+    <th>Due Date</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let todo of user.todos">
+      <ng-container *ngIf="todo.priority == 1">
+        <tr  class="bg-danger text-light">
+          <td>{{todo.todo}}</td>
+          <td>{{todo.priority}}</td>
+          <td>{{todo.dueDate}}</td>
+          <ng-container *ngIf="todo.status">
+            <td>&#10004;</td>
+          </ng-container>
+          <ng-container *ngIf="!todo.status">
+            <td>&#10060;</td>
+          </ng-container>
+          <td>
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="todo.priority == 2">
+        <tr  class="bg-warning">
+          <td>{{todo.todo}}</td>
+          <td>{{todo.priority}}</td>
+          <td>{{todo.dueDate}}</td>
+          <ng-container *ngIf="todo.status">
+            <td>&#10004;</td>
+          </ng-container>
+          <ng-container *ngIf="!todo.status">
+            <td>&#10060;</td>
+          </ng-container>
+          <td>
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="todo.priority == 3">
+        <tr  class="bg-success">
+          <td>{{todo.todo}}</td>
+          <td>{{todo.priority}}</td>
+          <td>{{todo.dueDate}}</td>
+          <ng-container *ngIf="todo.status">
+            <td>&#10004;</td>
+          </ng-container>
+          <ng-container *ngIf="!todo.status">
+            <td>&#10060;</td>
+          </ng-container>
+          <td>
+            <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+            <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+    </ng-container>
+  </tbody>
+</table>

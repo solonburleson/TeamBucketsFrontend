@@ -13,10 +13,9 @@ export class TodoService {
     this.uri = 'http://localhost:8080/api/todos';
   }
 
-  addTodo(todoDescr, dueDate, status, priority, id) {
+  addTodo(id, description, dueDate, status, priority) {
     const obj = {
-      id,
-      todoDescr,
+      description,
       dueDate,
       status,
       priority
@@ -35,19 +34,20 @@ export class TodoService {
     return this.http.get<Todo>(`${this.uri}/${id}`);
   }
 
-  updateTodo(todoDescr, dueDate, status, priority, id) {
+  updateTodo(id, description, dueDate, status, priority) {
     const obj = {
       id,
-      todoDescr,
+      description,
       dueDate,
-      status,
-      priority
+      priority,
+      status
     };
+
+    console.log(obj);
 
     console.log(`${this.uri}/${Number(id)}`);
 
-    this.http.put(`${this.uri}/${Number(id)}`, obj)
-      .subscribe(res => console.log('Done'));
+    this.http.put(`${this.uri}/${Number(id)}`, obj).subscribe(res => console.log('Done'));
   }
 
   deleteTodo(id) {
