@@ -13,13 +13,15 @@ import { TodosListComponent } from './todos-list/todos-list.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: 'todo/create', component: TodosAddComponent},
   {path: 'todo/edit/:id', component: TodosEditComponent},
   {path: 'todos', component: TodosListComponent},
   {path: 'register', component: RegisterUserComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const routes: Routes = [
     TodosAddComponent,
     TodosEditComponent,
     TodosListComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
