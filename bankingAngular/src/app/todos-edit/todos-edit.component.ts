@@ -10,12 +10,12 @@ import Todo from '../todo';
   styleUrls: ['./todos-edit.component.css']
 })
 export class TodosEditComponent implements OnInit {
-  todo: Todo = {}; 
+  todo: Todo;
   angForm: FormGroup;
 
-  constructor(private todoService: TodoService, 
-              private router: Router, 
-              private fb: FormBuilder, 
+  constructor(private todoService: TodoService,
+              private router: Router,
+              private fb: FormBuilder,
               private route: ActivatedRoute) {
       this.createForm();
   }
@@ -25,8 +25,7 @@ export class TodosEditComponent implements OnInit {
       description: ['', Validators.required ],
       dueDate: ['', Validators.required ],
       status: ['', Validators.required ],
-      priority: ['', Validators.required],
-      status: ['', Validators.required]
+      priority: ['', Validators.required]
     });
   }
 
