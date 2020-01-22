@@ -6,3 +6,14 @@ nav {
 
 }
 
+
+.navbar-brand{
+  margin: 10px;
+}
+
+.mynavbar {
+  position: relative;
+  width: 200px;
+
+  background-size: contain;
+}
