@@ -20,4 +20,18 @@ export class TodosListComponent implements OnInit {
     });
   }
 
+  deleteTodo(id) {
+    console.log('delete task id= ' + id);
+    this.todoService.deleteTodo(id).subscribe(res => {
+      console.log('delete res= ' + res);
+      // console.log(this.products);
+      // this.products.splice(id, 1);
+      // this.router.navigate(['products']);
+      this.todoService.getTodos().subscribe((data:any) => {
+        console.log(data);
+        this.todos = data;
+      });
+    });
+  }
+
 }
