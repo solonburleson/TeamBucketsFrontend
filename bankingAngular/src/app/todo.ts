@@ -1,7 +1,7 @@
 export default class Todo {
     id: number;
     description: string;
-    dueDate: date;
+    dueDate: Date;
     status: boolean;
     priority: number;
 }
