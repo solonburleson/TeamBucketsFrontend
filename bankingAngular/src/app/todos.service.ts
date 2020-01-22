@@ -13,8 +13,9 @@ export class TodoService {
     this.uri = 'http://localhost:8080/api/todos';
   }
 
-  addProduct(todoDescr, dueDate, status, priority, userId) {
+  addTodo(todoDescr, dueDate, status, priority, id) {
     const obj = {
+      id,
       todoDescr,
       dueDate,
       status,
@@ -22,7 +23,7 @@ export class TodoService {
     };
     console.log('check object before posting ');
     console.log(obj);
-    this.http.post(`${this.uri}/${userId}`)
+    this.http.post(`${this.uri}/${id}`, obj)
         .subscribe(res => console.log('Done'));
   }
 
