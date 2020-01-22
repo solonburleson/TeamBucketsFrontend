@@ -19,8 +19,10 @@
             <ng-container *ngIf="!todo.status">
               <td>&#10060;</td>
             </ng-container>
-            <td><a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
-					  <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a></td>
+            <td>
+              <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+					    <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a>
+            </td>
           </tr>
         </ng-container>
         <ng-container *ngIf="todo.priority == 2">
@@ -33,9 +35,11 @@
             </ng-container>
             <ng-container *ngIf="!todo.status">
               <td>&#10060;</td>
-              <td><a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
-					    <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a></td>
             </ng-container>
+            <td>
+              <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+					    <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
+            </td>
           </tr>
         </ng-container>
         <ng-container *ngIf="todo.priority == 3">
@@ -48,9 +52,11 @@
             </ng-container>
             <ng-container *ngIf="!todo.status">
               <td>&#10060;</td>
-              <td><a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
-					    <a (click) = "deleteTodo(todo.id)" class="btn btn-dark">Delete</a></td>
             </ng-container>
+            <td>
+              <a role="button" class="btn btn-secondary" [routerLink]="['/todo/edit', todo.id]">Edit</a> 
+					    <a (click) = "deleteTodo(todo.id)" class="btn btn-dark text-light">Delete</a>
+            </td>
           </tr>
         </ng-container>
       </ng-container>
