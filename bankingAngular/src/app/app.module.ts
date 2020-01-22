@@ -14,13 +14,23 @@ import { TodosListComponent } from './todos-list/todos-list.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { TellerTodosComponent } from './teller-todos/teller-todos.component';
+import { AccountantTodosComponent } from './accountant-todos/accountant-todos.component';
+import { BranchManagerTodosComponent } from './branch-manager-todos/branch-manager-todos.component';
+import { LoanOfficerTodosComponent } from './loan-officer-todos/loan-officer-todos.component';
 
 const routes: Routes = [
   {path: 'todo/create', component: TodosAddComponent},
   {path: 'todo/edit/:id', component: TodosEditComponent},
   {path: 'todos', component: TodosListComponent},
   {path: 'register', component: RegisterUserComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '', component: HomeComponent},
+  {path: 'accountant/todos', component: AccountantTodosComponent},
+  {path: 'branch-manager/todos', component: BranchManagerTodosComponent},
+  {path: 'loan-officer/todos', component: LoanOfficerTodosComponent},
+  {path: 'teller/todos', component: TellerTodosComponent}
 ];
 
 @NgModule({
@@ -33,7 +43,12 @@ const routes: Routes = [
     TodosAddComponent,
     TodosEditComponent,
     TodosListComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    HomeComponent,
+    TellerTodosComponent,
+    AccountantTodosComponent,
+    BranchManagerTodosComponent,
+    LoanOfficerTodosComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
