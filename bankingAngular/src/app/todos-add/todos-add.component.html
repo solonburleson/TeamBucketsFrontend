@@ -1,4 +1,4 @@
-  <form [formGroup] = "angularForm" class="col-lg-6 mx-auto" (ngSubmit)= "onSubmit(todoDescr.value, dueDate.value, status.value, priority.value, id.value)">
+  <form [formGroup] = "angularForm" class="col-lg-6 mx-auto" (ngSubmit)= "onSubmit(todoDescr.value, status.value, priority.value, id.value)">
     <div class="form-group">
       <label class="col-lg-4">ID:</label>
       <input type="text" class="col-lg-7 form-control d-inline-block" formControlName="id" #id/>
@@ -14,10 +14,6 @@
         <option value="2">Medium</option>
         <option value="3">Low</option>
       </select>
-    </div>
-    <div class="form-group">
-      <label class="col-lg-4">Due Date:</label>
-      <input type="date" [ngModule]="dueDate | date:'MM-dd-yyyy'" (ngModelChange)="dueDate = $event" class="form-control col-lg-7 d-inline-block" formControlName="dueDate" #dueDate/>
     </div>
     <div class="form-group">
       <label class="col-lg-4">Status:</label>

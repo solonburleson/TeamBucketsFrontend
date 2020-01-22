@@ -22,7 +22,6 @@ export class TodosAddComponent implements OnInit {
     this.angularForm = this.fb.group({
       id: ['', Validators.required],
       todoDescr: ['', Validators.required ],
-      dueDate: ['', Validators.required ],
       status: ['', Validators.required ],
       priority: ['', Validators.required ]
     });
@@ -30,7 +29,7 @@ export class TodosAddComponent implements OnInit {
 
   onSubmit(id, todoDescr, dueDate, status, priority) {
     console.log(this.angularForm);
-    this.todoService.addTodo(id, todoDescr, dueDate, status, priority);
+    this.todoService.addTodo(id, todoDescr, status, priority);
   }
 
 }
