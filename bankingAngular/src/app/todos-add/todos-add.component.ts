@@ -10,7 +10,7 @@ import Todo from '../todo';
   styleUrls: ['./todos-add.component.css']
 })
 export class TodosAddComponent implements OnInit {
-  todo: Todo = {};
+  todo: Todo = {id: null, description: null, dueDate: null, status: null, priority: null};
   angForm: FormGroup;
   
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private todoService: TodoService, private router: Router) {

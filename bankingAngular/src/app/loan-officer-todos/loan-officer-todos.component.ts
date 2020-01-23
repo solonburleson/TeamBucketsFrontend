@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { TodoService } from '../todos.service';
 import { Router } from '@angular/router';
 import User from '../user';
 
@@ -9,10 +10,10 @@ import User from '../user';
   styleUrls: ['./loan-officer-todos.component.css']
 })
 export class LoanOfficerTodosComponent implements OnInit {
-  user: User;
+  user: User = {id: null, username: null, password: null, todos: null};
   name: string;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private todoService: TodoService,  private userService: UserService, private router: Router) {
     this.name = 'Loan Officer';
   }
 
@@ -23,4 +24,17 @@ export class LoanOfficerTodosComponent implements OnInit {
     })
   }
 
+  deleteTodo(id) {
+    console.log('delete task id= ' + id);
+    this.todoService.deleteTodo(id).subscribe(res => {
+      console.log('delete res= ' + res);
+      // console.log(this.products);
+      // this.products.splice(id, 1);
+      // this.router.navigate(['products']);
+      this.userService.getUserByName(this.name).subscribe((data:any) => {
+        console.log(data);
+        this.user = data;
+      });
+    });
+  }
 }
