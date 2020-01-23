@@ -6,9 +6,17 @@ body{
   background-color: #f7f7f7;
 }
 
-.container{ /* Currently used for front cards.*/
+.divider{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}
 
+h2 {
+
+  text-align: center;
 
 }
+
 
 
