@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { TodoService } from '../todos.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import Todo from '../todo';
 
 @Component({
   selector: 'app-todos-add',
@@ -9,27 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./todos-add.component.css']
 })
 export class TodosAddComponent implements OnInit {
-
-  angularForm: FormGroup;
-  constructor(private fb: FormBuilder, private todoService: TodoService, private router: Router) {
+  todo: Todo = {id: null, description: null, dueDate: null, status: null, priority: null};
+  angForm: FormGroup;
+  
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private todoService: TodoService, private router: Router) {
     this.createForm();
-   }
+  }
 
   ngOnInit() {
   }
 
   createForm() {
-    this.angularForm = this.fb.group({
+    this.angForm = this.fb.group({
       id: ['', Validators.required],
-      todoDescr: ['', Validators.required ],
+      description: ['', Validators.required ],
       status: ['', Validators.required ],
-      priority: ['', Validators.required ]
+      priority: ['', Validators.required ],
+      dueDate: ['', Validators.required ]
     });
   }
 
-  onSubmit(id, description, dueDate, status, priority) {
-    console.log(this.angularForm);
-    this.todoService.addTodo(id, description, dueDate, status, priority);
+  onSubmit(description, dueDate, status, priority) {
+    console.log(this.angForm);
+    this.route.params.subscribe(params => {
+      this.todoService.addTodo(params.id, description, dueDate, status, priority);
+      this.router.navigate(['/']);
+    });
   }
 
 }

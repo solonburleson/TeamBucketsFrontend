@@ -20,7 +20,7 @@ import { LoanOfficerTodosComponent } from './loan-officer-todos/loan-officer-tod
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
-  {path: 'todo/create', component: TodosAddComponent},
+  {path: 'todo/create/:id', component: TodosAddComponent},
   {path: 'todo/edit/:id', component: TodosEditComponent},
   {path: 'todos', component: TodosListComponent},
   {path: 'register', component: RegisterUserComponent},
